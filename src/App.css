@@ -1,32 +1,99 @@
-.App {
+html {
+  height: 1000px;
+}
+
+body {
   text-align: center;
+  margin: 0px;
+  height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Coda Caption', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+p {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header {
+  background-color: rgb(255, 145, 0);
+  margin: 0px;
+}
+
+h1, h3 {
+  margin: 0px;
+}
+
+.main {
+  background-color: #D6BA93;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+img {
+  width: 50%;
+}
+
+.navbar {
+  background-color: rgb(239, 247, 127);
+  width: 20%;
+}
+
+.display {
+  width: 80%;
+  padding-top: 50px;
+}
+
+.cat-names {
+  list-style-type: none;
+}
+
+.cats {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  width: 50%;
+  margin-bottom: 5px;
+  height: 30px;
+  background-color: rgb(255, 145, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-unit {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.form-btn {
+  width: 40%;
+  margin: 10px;
+}
+
+.form-label {
+  margin: 0px 10px;
+}
+
+@media only screen and (max-width: 850px) {
+  button {
+      width: 80%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 700px) {
+  img {
+      width: 80%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .main {
+      flex-direction: column;
+  }
+
+  .display, .navbar {
+      width: 100%;
   }
 }
