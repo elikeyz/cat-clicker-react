@@ -13,8 +13,6 @@ class Main extends Component {
             src: cats[0].src,
             clicks: cats[0].clicks
         };
-
-        this.setCat = this.setCat.bind(this);
     }
 
     setCat = (catIndex) => {
@@ -32,7 +30,7 @@ class Main extends Component {
                 <div className="navbar">
                     <p>Select a Cat</p>
                     <ul className="cat-names">
-                    { cats.map(cat => <li key={cat.id}><button id={cat.id} onClick={this.setCat}>{cat.name}</button></li>) }
+                    { cats.map((cat, index) => <li key={cat.id}><button id={cat.id} onClick={this.setCat.bind(this, index)}>{cat.name}</button></li>) }
                     </ul>
                 </div>
                 <CatView name={this.state.name} src={this.state.src} clicks={this.state.clicks} />

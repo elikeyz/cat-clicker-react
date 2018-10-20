@@ -21,6 +21,16 @@ class CatView extends Component {
         this.handleClicksChange = this.handleClicksChange.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (this.props.name !== nextProps.name) {
+            this.setState({
+                name: nextProps.name,
+                src: nextProps.src,
+                clicks: nextProps.clicks
+            });
+        }
+    }
+
     incrementClickCount = () => {
         this.setState({
             clicks: this.state.clicks + 1
