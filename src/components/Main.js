@@ -11,7 +11,8 @@ class Main extends Component {
             id: cats[0].id,
             name: cats[0].name,
             src: cats[0].src,
-            clicks: cats[0].clicks
+            clicks: cats[0].clicks,
+            catIndex: 0
         };
     }
 
@@ -20,7 +21,8 @@ class Main extends Component {
             id: cats[catIndex].id,
             name: cats[catIndex].name,
             src: cats[catIndex].src,
-            clicks: cats[catIndex].clicks
+            clicks: cats[catIndex].clicks,
+            catIndex: catIndex
         });
     }
 
@@ -33,7 +35,7 @@ class Main extends Component {
                     { cats.map((cat, index) => <li key={cat.id}><button id={cat.id} onClick={this.setCat.bind(this, index)}>{cat.name}</button></li>) }
                     </ul>
                 </div>
-                <CatView name={this.state.name} src={this.state.src} clicks={this.state.clicks} />
+                <CatView name={this.state.name} src={this.state.src} clicks={this.state.clicks} index={this.state.catIndex} />
             </div>
         );
     }

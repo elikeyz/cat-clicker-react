@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import cats from '../models/cats';
 import '../App.css';
 
 class CatView extends Component {
@@ -26,15 +27,20 @@ class CatView extends Component {
             this.setState({
                 name: nextProps.name,
                 src: nextProps.src,
-                clicks: nextProps.clicks
+                clicks: nextProps.clicks,
+                nameInput: nextProps.name,
+                srcInput: nextProps.src,
+                clicksInput: nextProps.clicks
             });
         }
     }
 
     incrementClickCount = () => {
         this.setState({
-            clicks: this.state.clicks + 1
+            clicks: this.state.clicks + 1,
+            clicksInput: this.state.clicks + 1
         });
+        cats[this.props.index].clicks = this.state.clicks + 1;
     }
 
     handleNameChange = (event) => {
